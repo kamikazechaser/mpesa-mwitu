@@ -13,6 +13,7 @@ const helmet = require("helmet");
 
 // own modules
 const config = require("./core/config");
+const message = require("./core/message");
 
 
 // module variables
@@ -26,12 +27,24 @@ app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.post("/", (req, res) => {
+    if (req.body.secret === config.secret && req.body.from === "MPESA") {
+        return message.parse(req.body.message, (ctx) => {
+            if (ctx.ok === false) {
+                return res.status(500).json(ctx);
+            } else {
+                return res.status(200).json(ctx);
+            }
+        });
+    }
+});
+
 
 db.once("open", () => {
     console.log("Successfully connected to DB");
     app.listen(config.server.port, () => {
-        onsole.log(`Server started on port ${config.server.port}`);
-    });
+        console.log(`Server started on port ${config.server.port}`);
+    }); 
 });
 
 db.on("error", error => {
@@ -39,5 +52,5 @@ db.on("error", error => {
 });
 
 db.on("disconnected", () => {
-    console.log("Cnnection to DB disconnected");
+    console.log("Connection to DB disconnected");
 });

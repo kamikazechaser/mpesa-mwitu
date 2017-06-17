@@ -15,15 +15,19 @@ const paymentSchema = new Schema({
         required: true,
         unique: true
     },
+    amount: {
+        type: Number,
+        required: true
+    },
     phone: {
         type: String,
-        unique: true
+        required: true
     },
     name: {
         type: String,
         required: true
     },
-    time: {
+    timestamp: {
         type: String,
         require: true
     },
