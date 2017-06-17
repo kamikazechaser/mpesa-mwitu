@@ -1,0 +1,26 @@
+{
+  "name": "mpesa-mwitu",
+  "version": "0.0.1",
+  "description": "A simple M-Pesa gateway",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamikazechaser/mpesa-mwitu.git"
+  },
+  "author": "Mohammed Sohail <sohail@forfuture.tech>",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/kamikazechaser/mpesa-mwitu/issues"
+  },
+  "homepage": "https://github.com/kamikazechaser/mpesa-mwitu#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "helmet": "^3.6.1",
+    "mongoose": "^4.10.6",
+    "requestretry": "^1.12.0"
+  }
+}
