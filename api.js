@@ -14,6 +14,8 @@ const helmet = require("helmet");
 // own modules
 const config = require("./core/config");
 const message = require("./core/message");
+const package = require("./package");
+const Payment = require("./schemas/payments");
 
 
 // module variables
@@ -26,6 +28,25 @@ const app = express();
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get("/api/transactions/receipt/:receipt", (req, res) => {
+    return Payment.findOne({
+        receipt: req.params.receipt
+    }, {
+        __v: 0,
+        _id: 0
+    }, (err, doc) => {
+        if (doc === null) {
+            return res.status(400).json({ ok: false, message: "Could not find the specified transaction" });
+        } else {
+            return res.status(200).json({ ok: true, message: "Transaction found", payload: doc });
+        }
+    });
+});
+
+app.get("*", (req, res) => {
+    return res.send({ name: "M-Pesa Mwitu", version: package.version });
+})
 
 app.post("/", (req, res) => {
     if (req.body.secret === config.secret && req.body.from === "MPESA") {
