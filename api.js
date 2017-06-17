@@ -44,6 +44,21 @@ app.get("/api/transactions/receipt/:receipt", (req, res) => {
     });
 });
 
+app.get("/api/transactions/phone/:phone", (req, res) => {
+    return Payment.find({
+        phone: req.params.phone
+    }, {
+        __v: 0,
+        _id: 0
+    }, (err, doc) => {
+        if (doc === null) {
+            return res.status(400).json({ ok: false, message: "Could not find the specified transaction" });
+        } else {
+            return res.status(200).json({ ok: true, message: "Transaction(s) found", payload: doc });
+        }
+    });
+});
+
 app.get("*", (req, res) => {
     return res.send({ name: "M-Pesa Mwitu", version: package.version });
 })
