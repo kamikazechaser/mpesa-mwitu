@@ -88,9 +88,11 @@ app.post("/", (req, res) => {
         return message.parse(req.body.message, (ctx) => {
             if (ctx.ok === false) {
                 return res.status(500).json(ctx);
-            } else {
+            } 
+            if (ctx.type === "DONT_PROCESS") {
                 return res.status(200).json(ctx);
             }
+            return res.status(200).json(ctx);
         });
     }
 });

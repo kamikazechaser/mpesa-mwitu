@@ -31,5 +31,7 @@ function parse(message, callback) {
             }
             return callback({ ok:true, message: "Transaction successfully saved", payload: result });
         })
+    } else {
+        return callback({ type: "DONT_PROCESS" });
     }
 }
