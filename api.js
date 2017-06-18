@@ -37,7 +37,7 @@ app.get("/api/transactions/receipt/:receipt", (req, res) => {
         _id: 0
     }, (error, doc) => {
         if (doc === null) {
-            return res.status(400).json({ ok: false, message: "Could not find the specified transaction" });
+            return res.status(404).json({ ok: false, message: "Could not find the specified transaction" });
         } 
         if (error) {
             return res.status(500).json({ ok: false, message: "Internal server error" });
@@ -54,7 +54,7 @@ app.get("/api/transactions/phone/:phone", (req, res) => {
         _id: 0
     }, (error, doc) => {
         if (doc === null) {
-            return res.status(400).json({ ok: false, message: "Could not find the specified transaction" });
+            return res.status(404).json({ ok: false, message: "Could not find the specified transaction" });
         }
         if (error) {
             return res.status(500).json({ ok: false, message: "Internal server error" });

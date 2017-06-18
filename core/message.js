@@ -11,6 +11,7 @@ exports = module.exports = {
 
 // own modules
 const Payment = require("../schemas/payments");
+const webhook = require("../integrations/webhook");
 
 
 function parse(message, callback) {
@@ -29,7 +30,8 @@ function parse(message, callback) {
             if (error) {
                 return callback({ ok: false, message: "Transaction could not be saved", payload: error.message });
             }
-            return callback({ ok:true, message: "Transaction successfully saved", payload: result });
+            callback({ ok:true, message: "Transaction successfully saved", payload: result });
+            return webhook.push(result);
         })
     } else {
         return callback({ type: "DONT_PROCESS" });
