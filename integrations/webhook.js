@@ -14,10 +14,10 @@ const request = require("requestretry");
 
 
 // own modules
-const config = require("./config");
+const config = require("../config");
 
 
-function push(data, callback) {
+function push(data) {
 	request({
 		method: "POST",
 		uri: config.webhook.endpoint,

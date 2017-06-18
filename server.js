@@ -12,7 +12,7 @@ const helmet = require("helmet");
 
 
 // own modules
-const config = require("./core/config");
+const config = require("./config");
 const message = require("./core/message");
 const package = require("./package");
 const Payment = require("./schemas/payments");
