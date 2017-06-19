@@ -33,6 +33,10 @@ smsSync configuration
 - HTTP method should be POST
 - Secret should be the same you enter in the config file above
 
+## Heroku Deployment
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ## API Reference
 
 GET /api/transactions/receipt/:receipt

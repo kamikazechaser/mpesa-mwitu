@@ -1,0 +1,17 @@
+{
+  "name": "M-Pesa Mwitu",
+  "description": "A simple personal M-Pesa API gateway accesible via REST",
+  "repository": "https://github.com/kamikazechaser/mpesa-mwitu",
+  "logo": "http://www.vodafone.com/content/dam/vodafone-images/media/m-pesa/m-pesa-logo.jpg",
+  "website": "https://github.com/kamikazechaser/mpesa-mwitu",
+  "keywords": ["mpesa"],
+  "env": {
+      "SECRET": {
+          "description": "smsSync secret"
+      },
+      "MONGO": {
+          "description": "MongoDB URL"
+      }
+  },
+  "success_url": "/home"
+}
