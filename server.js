@@ -12,7 +12,7 @@ const mongoose = require("mongoose");
 
 // own modules
 const config = require("./config");
-const message = require("./core/message");
+const message = require("./lib/message");
 const package = require("./package");
 const Payment = require("./schemas/payments");
 
