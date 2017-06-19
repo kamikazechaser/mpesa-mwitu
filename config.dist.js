@@ -8,10 +8,10 @@ exports = module.exports = {
     server: {
         // Port on which the server will run on
         // defaults to 3000
-        port: 3000
+        port: process.env.PORT || 3000
     },
     // MongoDB url
-    db: "",
+    db: process.env.MONGO || "",
     // smsSync secret
-    secret: ""
+    secret: process.env.SECRET || ""
 }
