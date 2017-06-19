@@ -32,9 +32,10 @@ Prior to running the server, you need to populate the [configuration](https://gi
 
 smsSync configuration
 
-- Data format should be JSON
-- HTTP method should be POST
+- URL should point to the base URL i.e https://your.domain/
 - Secret should be the same you enter in the config file above
+- HTTP method should be POST
+- Data format should be JSON
 
 ## Easy Deployment
 
