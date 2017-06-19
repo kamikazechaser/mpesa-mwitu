@@ -1,4 +1,4 @@
-> 🏛 M-Pesa Mwitu
+> 📲 M-Pesa Mwitu
 
 A simple personal M-Pesa API gateway accesible via REST
 
@@ -9,40 +9,43 @@ This project allows you to proccess payments receieved on your personal M-Pesa a
 
 **Important Information**
 
-- You will need the smsSync App installed on your phone.
-- This is not a library, and will need to be deployed independently.
+- You will need the [smsSync app](https://play.google.com/store/apps/details?id=org.addhen.smssync) installed on your Android phone.
+- This project will need to be deployed independently.
 - This project uses MongoDB as its primary (and only) database.
 
 **REST API Information**
 
-Every request returns actual status codes, an "ok" status, a short message and payload (if available).
+Every request returns:
+ 
+- Actual server status codes
+- An "ok" status
+- A short message
+- Payload (if available).
 
 
-## Installation
+## Configuration
 
-```bash
-$ git clone https://github.com/kamikazechaser/mpesa-mwitu.git
-$ cd mpesa-mwitu
-$ npm install
+Prior to running the server, you need to populate the [configuration](https://github.com/kamikazechaser/mpesa-mwitu/blob/master/config.dist.js) file.
 
-# Populate the config file with the relevant information
+smsSync configuration
 
-# Start the server with a process manager
-```
+- Data format should be JSON
+- HTTP method should be POST
+- Secret should be the same you enter in the config file above
 
 ## API Reference
 
-**GET /api/transactions/receipt/:receipt**
+GET /api/transactions/receipt/:receipt
 
-Get a transaction by receipt
+> Get a transaction by receipt
 
-**GET /api/transactions/phone/:phone**
+GET /api/transactions/phone/:phone
 
-Get all transactions linked to a specific phone number
+> Get all transactions linked to a specific phone number
 
-**GET /api/transactions/validate/:receipt**
+GET /api/transactions/validate/:receipt
 
-Validate the "used" field. Useful in cases such as online shops and digital goods
+> Validate the "used" field. Useful in cases such as online shops and digital goods
 
 
 ## Issues And Contribution
