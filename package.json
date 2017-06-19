@@ -4,7 +4,8 @@
   "description": "A simple personal M-Pesa API gateway accesible via REST",
   "main": "server.js",
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "lint": "./node_modules/eslint/bin/eslint.js server.js lib/message.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,12 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "mongoose": "^4.10.6"
+  },
+  "devDependencies": {
+    "eslint": "^4.0.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
   }
 }

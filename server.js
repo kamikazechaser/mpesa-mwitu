@@ -3,6 +3,7 @@
  * Mohammed Sohail <sohail@forfuture.tech>
  */
 
+/* eslint-disable no-console */
 
 // npm-installed modules
 const bodyParser = require("body-parser");
@@ -24,7 +25,7 @@ const db = mongoose.connection;
 
 const app = express();
 
-app.disable('x-powered-by');
+app.disable("x-powered-by");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -37,7 +38,7 @@ app.get("/api/transactions/receipt/:receipt", (req, res) => {
     }, (error, doc) => {
         if (doc === null) {
             return res.status(404).json({ ok: false, message: "Could not find the specified transaction" });
-        } 
+        }
         if (error) {
             return res.status(500).json({ ok: false, message: "Internal server error" });
         }
@@ -89,7 +90,7 @@ app.post("/", (req, res) => {
         return message.parse(req.body.message, (ctx) => {
             if (ctx.ok === false) {
                 return res.status(500).json(ctx);
-            } 
+            }
             if (ctx.type === "DONT_PROCESS") {
                 return res.status(200).json(ctx);
             }
@@ -103,10 +104,10 @@ db.once("open", () => {
     console.log("Successfully connected to DB");
     app.listen(config.server.port, () => {
         console.log(`Server started on port ${config.server.port}`);
-    }); 
+    });
 });
 
-db.on("error", error => {
+db.on("error", () => {
     console.error("Failed to connect to DB");
 });
 
