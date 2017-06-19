@@ -33,7 +33,11 @@ smsSync configuration
 - HTTP method should be POST
 - Secret should be the same you enter in the config file above
 
-## Heroku Deployment
+## Easy Deployment
+
+You can easily deploy a instance of M-Pesa Mwitu on Heroku. Simply click on the button below.
+
+If you need a MongoDB instance, head over [here](https://mlab.com) to get one.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
