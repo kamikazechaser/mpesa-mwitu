@@ -19,7 +19,6 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
-    "helmet": "^3.6.1",
     "mongoose": "^4.10.6"
   }
 }

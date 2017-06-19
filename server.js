@@ -8,7 +8,6 @@
 const bodyParser = require("body-parser");
 const express = require("express");
 const mongoose = require("mongoose");
-const helmet = require("helmet");
 
 
 // own modules
@@ -25,7 +24,7 @@ const db = mongoose.connection;
 
 const app = express();
 
-app.use(helmet());
+app.disable('x-powered-by');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
