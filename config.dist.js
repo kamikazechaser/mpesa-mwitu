@@ -1,3 +1,9 @@
+/**
+ * M-Pesa Mwitu
+ * Mohammed Sohail <sohail@forfuture.tech>
+ */
+
+
 exports = module.exports = {
     server: {
         // Port on which the server will run on
