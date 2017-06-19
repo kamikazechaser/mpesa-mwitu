@@ -52,7 +52,7 @@ app.get("/api/transactions/phone/:phone", (req, res) => {
         __v: 0,
         _id: 0
     }, (error, doc) => {
-        if (doc === null) {
+        if (doc.length === 0) {
             return res.status(404).json({ ok: false, message: "Could not find the specified transaction" });
         }
         if (error) {
@@ -72,15 +72,17 @@ app.get("/api/transactions/validate/:receipt", (req, res) => {
     }, (error, doc) => {
         if (error) {
             return res.status(500).json({ ok: false, message: "Could not update transaction status" });
-        } else {
-            return res.status(200).json({ ok: true, message: "Transaction status updated" });
         }
+        if (doc === null) {
+            return res.status(404).json({ ok: false, message: "Transaction does not exist" });
+        }
+        return res.status(200).json({ ok: true, message: "Transaction status updated" });
     });
 });
 
 app.get("*", (req, res) => {
     return res.send({ name: "M-Pesa Mwitu", version: package.version });
-})
+});
 
 app.post("/", (req, res) => {
     if (req.body.secret === config.secret && req.body.from === "MPESA") {
