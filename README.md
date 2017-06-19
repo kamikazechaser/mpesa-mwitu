@@ -1,3 +1,6 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5272ce2dd421477592d6cb402de3b6e8)](https://www.codacy.com/app/kamikazechaser/mpesa-mwitu?utm_source=github.com&utm_medium=referral&utm_content=kamikazechaser/mpesa-mwitu&utm_campaign=badger)
+[![Telegram](http://img.shields.io/badge/Telegram-@kamikazechaser-00aced.svg)](https://telegram.me/kamikazechaser)
+
 > 📲 M-Pesa Mwitu
 
 A simple personal M-Pesa API gateway accesible via REST
@@ -39,7 +42,6 @@ You can easily deploy a instance of M-Pesa Mwitu on Heroku. Simply click on the 
 
 If you need a MongoDB instance, head over [here](https://mlab.com) to get one.
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5272ce2dd421477592d6cb402de3b6e8)](https://www.codacy.com/app/kamikazechaser/mpesa-mwitu?utm_source=github.com&utm_medium=referral&utm_content=kamikazechaser/mpesa-mwitu&utm_campaign=badger)
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## API Reference
