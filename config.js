@@ -14,4 +14,4 @@ exports = module.exports = {
     db: process.env.MONGO || "",
     // smsSync secret
     secret: process.env.SECRET || ""
-}
+};
